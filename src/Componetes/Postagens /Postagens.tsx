@@ -96,9 +96,12 @@ export const Postagens: React.FC = () => {
         <S.Container>
             <S.Background></S.Background>
             <S.Card>
-                <S.Text>Postar</S.Text>
-                <S.Inputs type="text" placeholder="Titulo" value={titulo} onChange={handleInputChange} />
-                <S.InputsMensagem placeholder="Mensagem" value={mensagem} onChange={handleInputChange} />
+                <S.Text style={{ fontWeight: 700, fontSize: '3rem', color: '#00ae4d' }}>Postar</S.Text>
+                <br /><br /><br />
+                <S.Text>Titulo</S.Text>
+                <S.Inputs type="text" name='titulo' value={titulo} onChange={handleInputChange} />
+                <S.Text>Mensagem</S.Text>
+                <S.InputsMensagem name="mensagem" value={mensagem} onChange={handleInputChange} />
                 <S.Text>Data de Expiração</S.Text>
                 <S.Inputs type="datetime-local" placeholder="expirationDateTime" value={expirationDateTime} onChange={handleInputChange} />
                 <h3>{error && <div style={{ color: 'red' }}>{error}</div>}</h3>

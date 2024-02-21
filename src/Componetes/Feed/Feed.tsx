@@ -53,7 +53,7 @@ export const Feed: React.FC = () => {
 
     return (
         <S.ArticleContainer>
-            <S.CardContentText>Posts</S.CardContentText>
+
             {posts.map(post => (
                 <S.CardContainer key={post.id}>
                     <S.CardContentText>{post.attributes.titulo}</S.CardContentText>
