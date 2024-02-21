@@ -48,39 +48,38 @@ z-index: -3;
 }
 `
 export const Card = styled.div`
-margin-top: 55px;
-display: grid;
-place-items: center;
-max-width: 40rem;
-overflow: hidden;
-position: relative;
-width: 100%;
-margin: 0 20px;
-padding: 70px 30px 54px;
-border-radius: 1.25rem;
-background: #fff;
-text-align: center;
-box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1);;
-& ::before{
+  margin-top: 46.75px; /* 55 * 0.85 */
+  display: grid;
+  place-items: center;
+  max-width: 34rem; /* 40 * 0.85 */
+  overflow: hidden;
+  position: relative;
+  width: 85%; /* 100 * 0.85 */
+  margin: 0 17px; /* 20 * 0.85 */
+  padding: 59.5px 25.5px 45.9px; /* 70 * 0.85, 30 * 0.85, 54 * 0.85 */
+  border-radius: 1.0625rem; /* 1.25 * 0.85 */
+  background: #fff;
+  text-align: center;
+  box-shadow: 0.85px 0.85px 0.85px 2.55px rgb(0, 0, 0, 0.1); /* 1px * 0.85, 3px * 0.85 */
+  &::before {
     content: '';
     position: absolute;
-    top: 850px;
-    left: 50%;
-   translate: -50% 0 ;
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
+    top: 722.5px; /* 850 * 0.85 */
+    left: 42.5%; /* 50% * 0.85 */
+    translate: -42.5% 0; /* translate: -50% 0; */
+    width: 850px; /* 1000 * 0.85 */
+    height: 850px; /* 1000 * 0.85 */
+    border-radius: 42.5%; /* 50% * 0.85 */
     background: #216ce7;
     @media screen and (min-width: 500px) {
-  margin: 0;
-  width: 360px;
-}
-@media screen and (max-width:768px) {
- margin: 0 auto;
-}
-
-}
-`
+      margin: 0;
+      width: 306px; /* 360 * 0.85 */
+    }
+    @media screen and (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+`;
 export const Text = styled.h2`
 font-size: 1.2rem;
 font-weight: 700;
