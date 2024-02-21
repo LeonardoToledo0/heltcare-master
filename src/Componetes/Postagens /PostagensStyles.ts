@@ -98,7 +98,7 @@ height: 4em;
 border-radius: 28px;
 border: 2px solid #ebebeb;
 font-size: 16px;
-color: #11274c;
+color: black;
 margin-top: 20px;
 text-align: center;
 
@@ -112,7 +112,7 @@ text-align: center;
 border-radius: 28px;
 border: 2px solid #ebebeb;
 font-size: 16px;
-color: #11274c;
+color: black;
 margin-top: 20px;
 `
 export const Button = styled.a`
