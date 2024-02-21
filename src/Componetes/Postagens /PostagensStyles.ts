@@ -48,15 +48,15 @@ z-index: -3;
 }
 `
 export const Card = styled.div`
-margin-top: 55px;
+
 display: grid;
 place-items: center;
-max-width: 40rem;
+max-width: 45rem;
 overflow: hidden;
 position: relative;
 width: 100%;
 margin: 0 20px;
-padding: 70px 30px 54px;
+padding: 40px 30px 54px;
 border-radius: 1.25rem;
 background: #fff;
 text-align: center;
@@ -64,11 +64,11 @@ box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1);;
 & ::before{
     content: '';
     position: absolute;
-    top: 850px;
+    top: 800px;
     left: 50%;
    translate: -50% 0 ;
     width: 1000px;
-    height: 1000px;
+    height: 800px;
     border-radius: 50%;
     background: #216ce7;
     @media screen and (min-width: 500px) {
