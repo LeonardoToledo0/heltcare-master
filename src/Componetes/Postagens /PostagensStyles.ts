@@ -82,7 +82,7 @@ box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1);;
 }
 `
 export const Text = styled.h2`
-font-size: 2rem;
+font-size: 1.2rem;
 font-weight: 700;
 margin-top: 15px;
 color: #2a3444;

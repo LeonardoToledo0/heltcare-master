@@ -96,7 +96,7 @@ export const Postagens: React.FC = () => {
         <S.Container>
             <S.Background></S.Background>
             <S.Card>
-                <S.Text style={{ fontWeight: 700, fontSize: '3rem', color: '#00ae4d' }}>Postar</S.Text>
+                <S.Text style={{ fontWeight: 700, fontSize: '2rem', color: '#00ae4d' }}>Postar</S.Text>
                 <br /><br /><br />
                 <S.Text>Titulo</S.Text>
                 <S.Inputs type="text" name='titulo' value={titulo} onChange={handleInputChange} />
