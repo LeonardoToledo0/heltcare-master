@@ -101,7 +101,7 @@ export const Postagens: React.FC = () => {
                 <S.InputsMensagem placeholder="Mensagem" value={mensagem} onChange={handleInputChange} />
                 <S.Text>Data de Expiração</S.Text>
                 <S.Inputs type="datetime-local" placeholder="expirationDateTime" value={expirationDateTime} onChange={handleInputChange} />
-                <S.Text>{error && <div style={{ color: 'red' }}>{error}</div>}</S.Text>
+                <h3>{error && <div style={{ color: 'red' }}>{error}</div>}</h3>
                 <S.Button onClick={handleSubmit}>Enviar</S.Button>
             </S.Card>
         </S.Container>
