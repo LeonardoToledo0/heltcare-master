@@ -30,7 +30,7 @@ export const Feed: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<ApiResponse>('http://localhost:1337/api/posts');
+                const response = await axios.get<ApiResponse>('https://different-diamond-5de42f9eba.strapiapp.com/api/posts');
                 setPosts(response.data.data);
             } catch (error) {
                 console.error('Erro ao buscar posts:', error);

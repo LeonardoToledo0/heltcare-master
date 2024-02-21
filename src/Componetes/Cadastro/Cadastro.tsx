@@ -14,7 +14,7 @@ export const Cadastro: React.FC = () => {
 
     const handleCadastro = async () => {
         try {
-            const response = await fetch("http://localhost:1337/api/auth/local/register", {
+            const response = await fetch("https://different-diamond-5de42f9eba.strapiapp.com/api/auth/local/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

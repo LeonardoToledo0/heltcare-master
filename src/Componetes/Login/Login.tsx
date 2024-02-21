@@ -14,7 +14,7 @@ export const Login: React.FC = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:1337/api/auth/local', {
+            const response = await fetch('https://different-diamond-5de42f9eba.strapiapp.com/api/auth/local', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

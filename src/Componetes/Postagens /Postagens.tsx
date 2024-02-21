@@ -52,7 +52,7 @@ export const Postagens: React.FC = () => {
 
         try {
             // Adicionar token ao cabeçalho da requisição
-            const response = await axios.post('http://localhost:1337/api/posts', {
+            const response = await axios.post('https://different-diamond-5de42f9eba.strapiapp.com/api/posts', {
                 data: {
                     titulo: titulo,
                     mensagem: [
