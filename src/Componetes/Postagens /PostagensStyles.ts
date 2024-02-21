@@ -64,9 +64,9 @@ box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1);;
 & ::before{
     content: '';
     position: absolute;
-    top: 880px;
+    top: 850px;
     left: 50%;
-    translate: -50% 0 ;
+   translate: -50% 0 ;
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
