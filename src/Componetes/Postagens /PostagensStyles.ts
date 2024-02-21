@@ -48,7 +48,7 @@ z-index: -3;
 }
 `
 export const Card = styled.div`
-margin-top: 50px;
+margin-top: 55px;
 display: grid;
 place-items: center;
 max-width: 40rem;
