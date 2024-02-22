@@ -36,6 +36,12 @@ export const Postagens: React.FC = () => {
 
         return true;
     };
+    const formatExpirationDate = (expirationDate: string) => {
+        const date = new Date(expirationDate);
+        const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        const formattedTime = `${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
+        return { formattedDate, formattedTime };
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -51,6 +57,10 @@ export const Postagens: React.FC = () => {
         }
 
         try {
+            // Ajuste do formato da data
+            const formattedDateTime = formatExpirationDate(expirationDateTime).formattedDate;
+
+
             // Adicionar token ao cabeçalho da requisição
             const response = await axios.post('https://different-diamond-5de42f9eba.strapiapp.com/api/posts', {
                 data: {
@@ -66,7 +76,7 @@ export const Postagens: React.FC = () => {
                             ],
                         },
                     ],
-                    expirationDate: expirationDateTime,
+                    expirationDate: formattedDateTime,
                     createdAt: new Date().toISOString(),
                     updatedAt: new Date().toISOString(),
                 },

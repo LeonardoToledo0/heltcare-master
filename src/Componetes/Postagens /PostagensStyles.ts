@@ -115,7 +115,7 @@ font-size: 16px;
 color: black;
 margin-top: 20px;
 `
-export const Button = styled.a`
+export const Button = styled.p`
 margin-top: 10px;
 padding: 1em 3em;
 border-radius: 28px;

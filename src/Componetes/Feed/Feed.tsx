@@ -19,7 +19,7 @@ interface Post {
         }>;
         createdAt: string;
         updatedAt: string;
-        expirationDate: string;
+        expirationdate: string;
     };
 }
 
@@ -39,42 +39,60 @@ export const Feed: React.FC = () => {
 
         fetchData();
     }, []);
-
-    const handleToggle = (postId: number) => {
-        setExpandedPostId(expandedPostId === postId ? null : postId);
-    };
-
     const formatExpirationDate = (expirationDate: string) => {
-        const date = new Date(expirationDate);
-        const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-        const formattedTime = `${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
-        return { formattedDate, formattedTime };
-    };
+        try {
+            const date = new Date(expirationDate);
 
+            if (isNaN(date.getTime())) {
+                throw new Error(`Data inválida: ${expirationDate}`);
+            }
+
+            const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+            const formattedTime = `${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
+
+            return { formattedDate, formattedTime };
+        } catch (error) {
+            if (error instanceof Error && typeof error.message === 'string') {
+                console.error('Erro ao formatar a data:', error.message);
+            } else {
+                console.error('Erro ao formatar a data:', error);
+            }
+
+            return { formattedDate: 'Data inválida', formattedTime: 'Hora inválida' };
+        }
+    };
     return (
         <S.ArticleContainer>
+            {posts.map(post => {
+                const { titulo, mensagem, expirationdate } = post.attributes;
+                const formattedDateAndTime = expirationdate ? formatExpirationDate(expirationdate) : { formattedDate: 'Data inválida', formattedTime: 'Hora inválida' };
 
-            {posts.map(post => (
-                <S.CardContainer key={post.id}>
-                    <S.CardContentText>{post.attributes.titulo}</S.CardContentText>
-                    <S.CardContentParagraph onClick={() => handleToggle(post.id)}>
-                        {expandedPostId === post.id ? (
-                            <>
-                                {post.attributes.mensagem[0].children[0].text}
-                            </>
-                        ) : (
-                            <>
-                                {post.attributes.mensagem[0].children[0].text.slice(0, 50)}{" "}
-                                {post.attributes.mensagem[0].children[0].text.length > 50 && (
-                                    <S.ReadMoreButton>leia mais</S.ReadMoreButton>
-                                )}
-                            </>
-                        )}
-                    </S.CardContentParagraph>
-                    <S.CardContentParagraph>Data de Expiração: {formatExpirationDate(post.attributes.expirationDate).formattedDate}</S.CardContentParagraph>
-                    <S.CardContentParagraph>Hora: {formatExpirationDate(post.attributes.expirationDate).formattedTime}</S.CardContentParagraph>
-                </S.CardContainer>
-            ))}
+                return (
+                    <S.CardContainer key={post.id}>
+                        <S.CardContentText>{titulo}</S.CardContentText>
+                        <S.CardContentParagraph onClick={() => setExpandedPostId(expandedPostId === post.id ? null : post.id)}>
+                            {expandedPostId === post.id ? (
+                                <>
+                                    {mensagem[0].children[0].text}
+                                </>
+                            ) : (
+                                <>
+                                    {mensagem[0].children[0].text.slice(0, 50)}{" "}
+                                    {mensagem[0].children[0].text.length > 50 && (
+                                        <S.ReadMoreButton>leia mais</S.ReadMoreButton>
+                                    )}
+                                </>
+                            )}
+                        </S.CardContentParagraph>
+                        <S.CardContentParagraph>
+                            Data de Expiração: {formattedDateAndTime.formattedDate}
+                        </S.CardContentParagraph>
+                        <S.CardContentParagraph>
+                            Hora: {formattedDateAndTime.formattedTime}
+                        </S.CardContentParagraph>
+                    </S.CardContainer>
+                );
+            })}
         </S.ArticleContainer>
     );
 };
