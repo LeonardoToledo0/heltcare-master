@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 export const FooterGlobal = styled.footer`
     width: 100%;
-   display: flex;
+    display: flex;
     align-items: flex-start;
     gap: 40px;
     margin: 0 auto;
     color: black;
+    position: fixed; /* Adiciona a propriedade position com o valor fixed */
+    bottom: 0; /* Fixa o componente no rodapé */
 
     @media screen and (min-width: 768px) and (max-width: 100%) {
-        
         max-width: 600px;
-       
     }
 
     @media screen and (min-width: 768px) {
