@@ -1,103 +1,108 @@
 import styled from "styled-components";
 
 export const ArticleContainer = styled.article`
-max-width: 100%;
-display: grid;
-place-items: center;
-margin: 0;
-height: 100%;
-margin-top: 12rem;
-margin-bottom: 100px;
-color: #342c29;
+max-width: 1200px;
+margin: 10% auto;
+@media screen and (max-width: 1370px) and (min-width: 1000px) {
+    margin-left: 20%;
+    align-items: center;
+    width: 70%;
+     
+    }
 
-    
+
+
 `
 export const CardContainer = styled.div`
+margin: 0 auto;
+width: 70%;
+height: 30vh;
 display: flex;
-align-items: center;
-flex-direction: column;
-text-align: center;
-width: 75vw;
-max-width: 650px;
-padding: 50px 30px 50px 20px ;
-background-color: #121017;
-border-radius: 24px;
-margin-bottom: 100px;
-@media (max-width: 768px){
-    margin: 0 40px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 60px;
-    width: 75%;
-    text-align: center;
-    flex-direction: column;
-    margin-bottom: 140px;
-    text-align: center;
+@media screen and (max-width: 1370px) and (min-width: 1000px) {
+    width: 90%;
+    height: auto;
+     
+    }
+    @media screen and (max-width: 580px){
+    width: 90%;
+    height: auto;
+  
+   
 }
 `
-export const CardBoxImage = styled.div``
-export const CardContent = styled.div``
-export const CardImageContent = styled.img`
-max-width:280px;
-width: 35vw;
-height: 300px;
-object-fit: cover;
-margin-left: -60px;
-margin-right: 30px;
-border-radius: inherit;
-box-shadow: 0 60px 40px rgb(0 0 0/8%);
-@media (max-width: 768px){
-    margin: -100px 0 30px 0;
-    width: 100%;
-    max-width: 1000px;
-}
-@media (max-width: 540px){
-    height: 45vw;
-    width: 45vw;
-    border-radius: 50%;
-    margin-top: -140px  ;
+export const CardBg = styled.div`
+width: 10%;
+height: auto;
+background-color: #00ae4d;
+border-radius: 8px 0px 0px 8px;
 
-}
+`
+export const CardBgText = styled.div`
+width: 100%;
+height: auto;
+background: #ccc;
+border-radius: 0px 8px 8px 0px;
 
+`
+export const CardContentText = styled.h2`
+text-align: start;
+font-size: 2rem;
+margin: 20px 20px;
+@media screen and (max-width: 1000px){
+    text-align: center;
+    
+}
+@media screen and (max-width: 580px){
+    font-size: 1.2rem;
+}
+`
+export const CardContentParagraph = styled.p`
+text-align: start;
+font-size: 1rem;
+margin: 40px 20px;
+@media screen and (max-width: 1000px){
+    text-align: center;
+}
+@media screen and (max-width: 580px){
+    font-size: 0.85rem;
+}
+`
+export const CardContentData = styled.p`
+text-align: end;
+font-size: 0.95rem;
+margin: 10px 20px;
+@media screen and (max-width: 1000px){
+    text-align: end;
+    }
+    @media screen and (max-width: 580px){
+    text-align: end;
+    font-size: 0.65rem;
+}
+`
+export const CardContentHora = styled.p`
+text-align: end;
+font-size: 0.95rem;
+margin: 10px 20px;
+@media screen and (max-width: 1000px){
+    text-align: end;
+    
+}
+@media screen and (max-width: 580px){
+    text-align: end;
+    font-size: 0.65rem;
+}
 `
 export const ReadMoreButton = styled.span`
-display: grid;
-place-items: center;
-border: 0;
+cursor: pointer;
 color: #00ae4d;
-font-size: 16px;
-border-radius: 40px;
-max-width: 100px;
-align-self: flex-end;
-margin-top: 10px;
-`;
-
-export const CardContentText = styled.h2`
-font-size: 2rem;
-font-weight: 700;
-color: #00ae4d;
-margin-top: 0;
-margin-right: 30px;
-margin-bottom: 10px;
-@media (max-width: 768px){
-    margin-right: 0;
+margin: 10px;
+@media screen and (max-width: 580px){
+    font-size: 0.75rem;
 }
 `
 
-export const CardContentParagraph = styled.p`
-display: flex;
-flex-direction: column;
-font-size: 1rem;
-line-height: 1em;
-text-align: justify;
-color: white;
-font-weight: 400;
-margin-bottom: 30px;
-@media (max-width: 768px){
-    max-width: 200px;
-    text-align: center;
-}
-`
+
+
 
 
 

@@ -69,27 +69,31 @@ export const Feed: React.FC = () => {
 
                 return (
                     <S.CardContainer key={post.id}>
-                        <S.CardContentText>{titulo}</S.CardContentText>
-                        <S.CardContentParagraph onClick={() => setExpandedPostId(expandedPostId === post.id ? null : post.id)}>
-                            {expandedPostId === post.id ? (
-                                <>
-                                    {mensagem[0].children[0].text}
-                                </>
-                            ) : (
-                                <>
-                                    {mensagem[0].children[0].text.slice(0, 50)}{" "}
-                                    {mensagem[0].children[0].text.length > 50 && (
-                                        <S.ReadMoreButton>leia mais</S.ReadMoreButton>
-                                    )}
-                                </>
-                            )}
-                        </S.CardContentParagraph>
-                        <S.CardContentParagraph>
-                            Data de Expiração: {formattedDateAndTime.formattedDate}
-                        </S.CardContentParagraph>
-                        <S.CardContentParagraph>
-                            Hora: {formattedDateAndTime.formattedTime}
-                        </S.CardContentParagraph>
+                        <S.CardBg></S.CardBg>
+                        <S.CardBgText>
+                            <S.CardContentText>{titulo}</S.CardContentText>
+                            <S.CardContentParagraph onClick={() => setExpandedPostId(expandedPostId === post.id ? null : post.id)}>
+
+                                {expandedPostId === post.id ? (
+                                    <>
+                                        {mensagem[0].children[0].text}
+                                    </>
+                                ) : (
+                                    <>
+                                        {mensagem[0].children[0].text.slice(0, 50)}{" "}
+                                        {mensagem[0].children[0].text.length > 50 && (
+                                            <S.ReadMoreButton>leia mais</S.ReadMoreButton>
+                                        )}
+                                    </>
+                                )}
+                            </S.CardContentParagraph>
+                            <S.CardContentData>
+                                Data de Expiração: {formattedDateAndTime.formattedDate}
+                            </S.CardContentData>
+                            <S.CardContentHora>
+                                Hora: {formattedDateAndTime.formattedTime}
+                            </S.CardContentHora>
+                        </S.CardBgText>
                     </S.CardContainer>
                 );
             })}

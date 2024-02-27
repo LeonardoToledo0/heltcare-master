@@ -12,7 +12,8 @@ export const Login: React.FC = () => {
         localStorage.setItem("token", token);
     };
 
-    const handleLogin = async () => {
+    const handleLogin: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
+        event.preventDefault();
         try {
             const response = await fetch('https://different-diamond-5de42f9eba.strapiapp.com/api/auth/local', {
                 method: 'POST',
@@ -62,7 +63,7 @@ export const Login: React.FC = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <S.ButtonLogin onClick={handleLogin}>Entrar</S.ButtonLogin>
+                    <S.ButtonLogin as="button" onClick={handleLogin}>Entrar</S.ButtonLogin>
                 </S.LoginContainer>
                 <S.ImageContainer></S.ImageContainer>
             </S.Container>

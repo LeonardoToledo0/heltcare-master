@@ -13,11 +13,11 @@ export const Container = styled.section`
  
  @media screen and (min-width: 500px) {
     height: 80vh;
-    max-width: 100%;
+    width: 70%;
     overflow: hidden;
 
 }
-@media screen and (max-width:991px) {
+@media screen and (max-width:1100px) {
 margin-top: 50px;
 
 }
@@ -48,7 +48,6 @@ z-index: -3;
 }
 `
 export const Card = styled.div`
-
 display: grid;
 place-items: center;
 max-width: 45rem;
@@ -71,12 +70,19 @@ box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.1);;
     height: 800px;
     border-radius: 50%;
     background: #216ce7;
-    @media screen and (min-width: 500px) {
-  margin: 0;
-  width: 360px;
+    @media screen and (max-width: 500px) {
+        width: 80%;
+        height: auto;
+        align-items: center;
+ 
 }
 @media screen and (max-width:768px) {
- margin: 0 auto;
+    width: 80%;
+    height: auto;
+   margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  margin-left: 20%;
 }
 
 }
@@ -91,6 +97,11 @@ export const Form = styled.form`
 display: grid;
 gap: 16px;
 margin: 0 0 36px;
+@media screen and (max-width: 500px) {
+        width: 80%;
+        height: auto;
+        align-items: center;}
+
 `
 export const Inputs = styled.input`
 width: 70%;
@@ -101,6 +112,10 @@ font-size: 16px;
 color: black;
 margin-top: 20px;
 text-align: center;
+@media screen and (max-width: 500px) {
+        width: 80%;
+        height: auto;
+        align-items: center;}
 
 
 
@@ -114,6 +129,10 @@ border: 2px solid #ebebeb;
 font-size: 16px;
 color: black;
 margin-top: 20px;
+@media screen and (max-width: 500px) {
+        width: 80%;
+        height: 80px;
+        align-items: center;}
 `
 export const Button = styled.p`
 margin-top: 10px;

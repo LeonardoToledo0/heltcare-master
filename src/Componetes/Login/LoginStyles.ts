@@ -40,6 +40,8 @@ export const ImageContainer = styled.div`
 export const ImageLogo = styled.img`
 width: 200px;
 height: 200px;
+background-color: #f9f9f9;
+border-radius: 8px;
 
 `
 export const InputLogin = styled.input`

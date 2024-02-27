@@ -11,7 +11,6 @@ export const Postagens: React.FC = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
 
-        // Se não houver token, exiba uma mensagem de erro
         if (!token) {
             setError('Você não está autenticado. Faça login para continuar.');
         }
@@ -46,22 +45,20 @@ export const Postagens: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Recuperar token do localStorage
+
         const token = localStorage.getItem('token');
 
-        // Debug: Verifique se o token está sendo recuperado corretamente
-        console.log('Token:', token);
 
         if (!validateFields() || !token) {
             return;
         }
 
         try {
-            // Ajuste do formato da data
+
             const formattedDateTime = formatExpirationDate(expirationDateTime).formattedDate;
 
 
-            // Adicionar token ao cabeçalho da requisição
+
             const response = await axios.post('https://different-diamond-5de42f9eba.strapiapp.com/api/posts', {
                 data: {
                     titulo: titulo,
@@ -114,7 +111,7 @@ export const Postagens: React.FC = () => {
                 <S.InputsMensagem name="mensagem" value={mensagem} onChange={handleInputChange} />
                 <S.Text>Data de Expiração</S.Text>
                 <S.Inputs type="datetime-local" name="expirationDateTime" value={expirationDateTime} onChange={handleInputChange} />
-                <h3>{error && <div style={{ color: 'red' }}>{error}</div>}</h3>
+                <p>{error && <div style={{ color: 'red' }}>{error}</div>}</p>
                 <S.Button onClick={handleSubmit}>Enviar</S.Button>
             </S.Card>
         </S.Container>
