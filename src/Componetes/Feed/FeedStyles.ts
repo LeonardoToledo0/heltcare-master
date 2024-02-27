@@ -14,7 +14,7 @@ margin: 10% auto;
 
 `
 export const CardContainer = styled.div`
-margin: 0 auto;
+margin: 80px auto;
 width: 70%;
 height: 30vh;
 display: flex;
